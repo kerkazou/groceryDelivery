@@ -29,24 +29,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         padding: 12,
     },
+    hreder: {
+        flex: 1,
+    },
     container: {
         backgroundColor: color.color1,
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    menu: {
-        width: 100,
-        textAlign: 'center',
-        padding: 3,
-        marginTop: 5,
-        borderRadius: 8,
-        color: color.black,
-        fontWeight: 'bold',
-        backgroundColor: color.white,
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        alignSelf: 'stretch',
     },
     login: {
         width: '100%',
@@ -57,7 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: color.white,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
-        gap: 30,
+        gap: 20,
     },
     register: {
         width: '100%',
@@ -68,7 +58,7 @@ const styles = StyleSheet.create({
         backgroundColor: color.white,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
-        rowGap: 30,
+        rowGap: 25,
     },
     greeting: {
         fontSize: 30,
@@ -98,6 +88,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         padding: 12,
+    },
+    footerbtn: {
+        textDecorationLine: 'underline',
     },
 });
 
