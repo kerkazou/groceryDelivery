@@ -5,9 +5,6 @@ import styles from '../../styles';
 import Header from '../components/Header';
 
 const Home = ({ navigation }) => {
-    setTimeout(() => {
-        navigation.navigate('Login');
-    }, 4000);
 
     return (
         <View style={styles.container}>

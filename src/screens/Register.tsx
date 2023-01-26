@@ -1,15 +1,21 @@
 import React from 'react';
 import { Text, View, TextInput } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from '../../styles';
 import Header from '../components/Header';
 
-const Register = ({navigation}) => {
+const Register = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Header />
             <View style={styles.register}>
                 <Text style={styles.greeting}>Register</Text>
+                <View style={styles.loginApi}>
+                    <View style={styles.loginApiBtn}><Icon name="facebook" size={20} ></Icon></View>
+                    <View style={styles.loginApiBtn}><Icon name="google" size={20} ></Icon></View>
+                </View>
+                <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Or</Text>
                 <TextInput style={styles.input} placeholder="Username" />
                 <TextInput style={styles.input} placeholder="Email" />
                 <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} />

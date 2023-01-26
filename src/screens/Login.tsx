@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from '../../styles';
@@ -11,7 +11,11 @@ const Authentification = ({ navigation }) => {
             <Header />
             <View style={styles.login}>
                 <Text style={styles.greeting}>Login</Text>
-                {/* <Text><Icon name="facebook" ></Icon></Text> */}
+                <View style={styles.loginApi}>
+                    <View style={styles.loginApiBtn}><Icon name="facebook" size={20} ></Icon></View>
+                    <View style={styles.loginApiBtn}><Icon name="google" size={20} ></Icon></View>
+                </View>
+                <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Or</Text>
                 <TextInput style={styles.input} placeholder="Email" />
                 <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} />
                 <Text style={styles.textForget}>Forget Password ?</Text>
