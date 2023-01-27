@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-const Login = () => {
+const Products = () => {
   return (
-    <Text>Login</Text>
+    <Text>Products</Text>
   );
 }
 
-export default Login;
+export default Products;
