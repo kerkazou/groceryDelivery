@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import color from './colors';
 
 const styles = StyleSheet.create({
+    // Authentification
     auth: {
         backgroundColor: color.color1,
         flex: 1,
@@ -9,8 +10,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-evenly',
     },
+    header: {
+        height: '35%',
+    },
     authHomeText: {
-        fontSize: 28,
+        fontSize: 30,
         color: color.white,
         textAlign: 'center',
         fontWeight: 'bold',
@@ -27,81 +31,27 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         padding: 12,
     },
-
-
-
-    home: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 35,
-    },
-    homeText: {
-        fontSize: 24,
-        color: color.black,
-    },
-    homeBtn: {
-        width: 180,
-        borderRadius: 25,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: color.black,
-        color: color.color1,
-        fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        padding: 12,
-    },
-    hreder: {
-        // flex: 1,
-        width: '50%',
-    },
-    headerMenu: {
-        width: 100,
-        textAlign: 'center',
-        padding: 3,
-        marginTop: 5,
-        borderRadius: 8,
-        color: color.black,
-        fontWeight: 'bold',
-        backgroundColor: color.white,
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        alignSelf: 'stretch',
-    },
-    container: {
-        backgroundColor: color.color1,
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
-    },
-    login: {
+    authcontainer: {
         width: '100%',
-        flex: 2,
+        height: '65%',
         justifyContent: 'space-evenly',
-        padding: 10,
         alignItems: 'center',
+        padding: 10,
         backgroundColor: color.white,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
     },
-    register: {
-        width: '100%',
-        flex: 2,
-        justifyContent: 'space-between',
-        padding: 10,
-        alignItems: 'center',
-        backgroundColor: color.white,
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-    },
-    greeting: {
+    authtexthead: {
         fontSize: 25,
         fontWeight: 'bold',
         textAlign: 'center',
         color: color.color1,
         borderBottomColor: color.color1,
         borderBottomWidth: 5,
+    },
+    authtextbody: {
+        color: '#000',
+        fontSize: 16,
     },
     loginApi: {
         width: 200,
@@ -143,16 +93,118 @@ const styles = StyleSheet.create({
     footerbtn: {
         textDecorationLine: 'underline',
     },
-
+    // Menu for page products
+    searchBar: {
+        height: 60,
+        paddingVertical: 5,
+        paddingHorizontal: 15,
+        margin: 5,
+        backgroundColor: color.white,
+        shadowColor: color.white,
+        elevation: 10,
+        borderTopRightRadius: 20,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: 10,
+    },
+    searchBarInput: {
+        width: '90%',
+        fontSize: 18,
+        borderBottomColor: color.color1,
+        borderColor: color.color1,
+        borderBottomWidth: 3,
+    },
     menu: {
-        height: 50,
-        backgroundColor: '#fff',
+        height: 60,
+        backgroundColor: color.white,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        shadowColor: '#000',
+        shadowColor: color.white,
         elevation: 20,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
     },
+
+
+
+
+
+
+
+
+    // home: {
+    //     flex: 1,
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //     gap: 35,
+    // },
+    // homeText: {
+    //     fontSize: 24,
+    //     color: color.black,
+    // },
+    // homeBtn: {
+    //     width: 180,
+    //     borderRadius: 25,
+    //     alignItems: "center",
+    //     justifyContent: "center",
+    //     backgroundColor: color.black,
+    //     color: color.color1,
+    //     fontSize: 20,
+    //     fontWeight: 'bold',
+    //     textAlign: 'center',
+    //     padding: 12,
+    // },
+    // headerMenu: {
+    //     width: 100,
+    //     textAlign: 'center',
+    //     padding: 3,
+    //     marginTop: 5,
+    //     borderRadius: 8,
+    //     color: color.black,
+    //     fontWeight: 'bold',
+    //     backgroundColor: color.white,
+    //     flexDirection: 'row',
+    //     justifyContent: 'flex-end',
+    //     alignSelf: 'stretch',
+    // },
+    // container: {
+    //     backgroundColor: color.color1,
+    //     flex: 1,
+    //     alignItems: 'center',
+    //     justifyContent: 'space-evenly',
+    // },
+    // login: {
+    //     width: '100%',
+    //     flex: 2,
+    //     justifyContent: 'space-evenly',
+    //     padding: 10,
+    //     alignItems: 'center',
+    //     backgroundColor: color.white,
+    //     borderTopLeftRadius: 30,
+    //     borderTopRightRadius: 30,
+    // },
+    // register: {
+    //     width: '100%',
+    //     flex: 2,
+    //     justifyContent: 'space-between',
+    //     padding: 10,
+    //     alignItems: 'center',
+    //     backgroundColor: color.white,
+    //     borderTopLeftRadius: 30,
+    //     borderTopRightRadius: 30,
+    // },
+    // greeting: {
+    //     fontSize: 25,
+    //     fontWeight: 'bold',
+    //     textAlign: 'center',
+    //     color: color.color1,
+    //     borderBottomColor: color.color1,
+    //     borderBottomWidth: 5,
+    // },
 });
 
 export default styles;
