@@ -7,15 +7,18 @@ import styles from '../assets/style/styles';
 import SearchBar from '../components/SearchBar';
 import Menu from '../components/Menu';
 import Categories from '../components/Categories';
+import s from '../../styles';
 
 const Products = () => {
 
   const produits = [
     { id: 1, title: 'Product_1', image: '', price: 200, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 2, title: 'Product_2', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 2, title: 'Product_2', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 2, title: 'Product_2', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 2, title: 'Product_2', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 3, title: 'Product_3', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 4, title: 'Product_4', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 5, title: 'Product_5', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 6, title: 'Product_6', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 7, title: 'Product_7', image: '', price: 300, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
   ]
 
   return (
@@ -34,7 +37,7 @@ const Products = () => {
         </View>
       </ScrollView>
       <Menu />
-    </View>
+    </View >
   );
 }
 
