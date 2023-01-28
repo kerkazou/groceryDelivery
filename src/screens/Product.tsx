@@ -6,7 +6,7 @@ import styles from '../assets/style/styles';
 
 import Menu from '../components/Menu';
 
-const Product = () => {
+const Product = ({ navigation }) => {
   const [produit, setProduit] = useState({ price: 100, quantite: 1 })
 
   return (
@@ -20,21 +20,21 @@ const Product = () => {
         <Text style={{ color: color.black, }}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis assumenda eos suscipit, earum ducimus quam itaque accusamus soluta voluptatibus, harum maiores esse ratione architecto! Saepe quae unde minus? Vero, eaque.
         </Text>
-        <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }}>
+        <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }}>
           <View style={{ flexDirection: 'row', gap: 10, }}>
             <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: color.color1, borderRadius: 5, }}>
-              <Text style={{ color: color.black, fontSize: 20, }} onPress={()=>{setProduit({...produit, quantite: produit.quantite-1})}}>-</Text>
+              <Text style={{ color: color.black, fontSize: 20, }} onPress={() => { setProduit({ ...produit, quantite: produit.quantite - 1 }) }}>-</Text>
             </View>
             <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: color.color1, borderRadius: 5, }}>
               <Text style={{ color: color.black, fontSize: 20, }}>{produit.quantite}</Text>
             </View>
             <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: color.color1, borderRadius: 5, }}>
-              <Text style={{ color: color.black, fontSize: 20, }} onPress={()=>{setProduit({...produit, quantite: produit.quantite+1})}}>+</Text>
+              <Text style={{ color: color.black, fontSize: 20, }} onPress={() => { setProduit({ ...produit, quantite: produit.quantite + 1 }) }}>+</Text>
             </View>
           </View>
           <Text style={{ color: color.black, fontSize: 20, }}>Total: {produit.price * produit.quantite}</Text>
         </View>
-        <Text style={styles.loginBtn}>Add</Text>
+        <Text style={styles.loginBtn} onPress={() => navigation.navigate('Store')}>Add</Text>
       </View>
       <Menu />
     </View>
