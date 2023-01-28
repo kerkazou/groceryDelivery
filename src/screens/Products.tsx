@@ -9,7 +9,7 @@ import Menu from '../components/Menu';
 import Categories from '../components/Categories';
 import s from '../../styles';
 
-const Products = () => {
+const Products = ({ navigation }) => {
 
   const produits = [
     { id: 1, title: 'Product_1', image: '', price: 200, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
@@ -30,7 +30,7 @@ const Products = () => {
           {produits.map((produit) => (
             <View style={{ width: 160, height: 200, justifyContent: 'center', alignItems: 'center', backgroundColor: 'red', borderRadius: 12 }}>
               <Text>{produit.image}</Text>
-              <Text>{produit.title}</Text>
+              <Text onPress={() => navigation.navigate('Product')}>{produit.title}</Text>
               <Text>{produit.price}</Text>
             </View>
           ))}

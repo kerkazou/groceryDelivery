@@ -17,7 +17,7 @@ const Register = ({ navigation }) => {
         <TextInput style={styles.input} placeholder="Password" placeholderTextColor={colors.gray} secureTextEntry={true} />
         <TextInput style={styles.input} placeholder="Confirm Password" placeholderTextColor={colors.gray} secureTextEntry={true} />
         <Text style={styles.authtextbody}>Forget Password ?</Text>
-        <Text style={styles.loginBtn} onPress={() => navigation.navigate('Product')}>Login</Text>
+        <Text style={styles.loginBtn} onPress={() => navigation.navigate('Product')}>Register</Text>
         <Text style={styles.authtextbody}>
           I have account?
           <Text onPress={() => navigation.navigate('Login')} style={styles.footerbtn}> Login</Text>

@@ -7,10 +7,10 @@ import color from '../assets/style/colors';
 
 const Menu = () => {
     const menu = [
-        { name: 'home' },
-        { name: 'shopping-cart' },
-        { name: 'gear' },
-        { name: 'power-off' },
+        { name: 'home', page: 'Products' },
+        { name: 'shopping-cart', page: 'Store' },
+        { name: 'gear', page: 'Profile' },
+        { name: 'power-off', page: 'Page' },
     ]
 
     return (
