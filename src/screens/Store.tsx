@@ -31,7 +31,7 @@ const Store = () => {
         </View>
         <ScrollView>
           <View style={{ gap: 10, }}>
-            {mystore.map((produit) => (
+            {mystore.map((produit, i) => (
               <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center', gap: 25, backgroundColor: color.white, padding: 10, borderRadius: 10, position: 'relative' }}>
                 <Image style={{ width: '20%', height: 100 }} source={require('../assets/images/grocery.png')} />
                 <View>
@@ -40,7 +40,7 @@ const Store = () => {
                   <Text style={{ color: color.black, fontSize: 15, }}>Price Total: {produit.price * produit.quantite} DH</Text>
                 </View>
                 <View style={{ position: 'absolute', top: 0, right: 0, padding: 8 }}>
-                  <Icon name='close' size={20} color={color.black}></Icon>
+                  <Icon name='close' size={20} color={color.black} onPress={() => { mystore.splice(i, 1) }}></Icon>
                 </View>
               </View>
             ))}

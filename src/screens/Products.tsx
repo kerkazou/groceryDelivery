@@ -14,11 +14,11 @@ const Products = ({ navigation }) => {
   const produits = [
     { id: 1, title: 'Product_1', image: '', price: 200, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 2, title: 'Product_2', image: '', price: 300, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 3, title: 'Product_3', image: '', price: 300, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 4, title: 'Product_4', image: '', price: 300, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 5, title: 'Product_5', image: '', price: 300, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 6, title: 'Product_6', image: '', price: 300, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 7, title: 'Product_7', image: '', price: 300, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 3, title: 'Product_3', image: '', price: 100, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 4, title: 'Product_4', image: '', price: 20, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 5, title: 'Product_5', image: '', price: 3000, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 6, title: 'Product_6', image: '', price: 100, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 7, title: 'Product_7', image: '', price: 30, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
   ]
 
   return (
