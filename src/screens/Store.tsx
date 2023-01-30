@@ -33,7 +33,7 @@ const Store = ({ navigation }) => {
         <ScrollView>
           <View style={{ gap: 10, }}>
             {mystore.map((produit, i) => (
-              <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center', gap: 25, backgroundColor: color.white, padding: 10, borderRadius: 10, position: 'relative' }}>
+              <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center', gap: 25, backgroundColor: color.white, padding: 10, borderRadius: 10, position: 'relative' }} key={i}>
                 <Image style={{ width: '20%', height: 100 }} source={require('../assets/images/grocery.png')} />
                 <View>
                   <Text style={{ color: color.black, fontSize: 20, fontWeight: 'bold' }}>{produit.title}</Text>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, ScrollView, Image } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, ScrollView, Image, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../assets/style/colors';
 
@@ -7,11 +7,10 @@ import styles from '../assets/style/styles';
 import SearchBar from '../components/SearchBar';
 import Menu from '../components/Menu';
 import Categories from '../components/Categories';
-import s from '../../styles';
 
 const Products = ({ navigation }) => {
 
-  const [produits, setProduits] = useState([
+  const data = [
     { id: 1, title: 'Apple', categorie: 'Fruits', image: require('../assets/images/apple.jpg'), price: 20, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 2, title: 'Avoca', categorie: 'Fruits', image: require('../assets/images/avoca.jpg'), price: 30, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 3, title: 'Banana', categorie: 'Fruits', image: require('../assets/images/banana.jpg'), price: 10, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
@@ -27,16 +26,25 @@ const Products = ({ navigation }) => {
 
     { id: 12, title: 'Lentils', categorie: 'Al-Qatani', image: require('../assets/images/lentils.jpg'), price: 40, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 13, title: 'Chickpeas', categorie: 'Al-Qatani', image: require('../assets/images/chickpeas.jpg'), price: 48, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-  ])
+  ]
+
+  const [produits, setProduits] = useState(data);
+  let [searsh, setSearsh] = useState("");
+  let [categorie, setCategorie] = useState("");
+
+  useEffect(() => {
+    const research = data.filter((e) => e.title.toLowerCase().includes(searsh.toLowerCase()));
+    (searsh === '') ? setProduits(data) : setProduits(research)
+  }, [searsh]);
 
   return (
     <View style={{ flex: 1 }}>
-      <SearchBar />
+      <SearchBar onChangeText={value => setSearsh(value)} />
       <Categories />
       <ScrollView>
         <View style={{ width: '100%', flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 15, padding: 20, }}>
-          {produits.map((produit) => (
-            <View style={{ width: 160, minHeight: 200, alignItems: 'center', backgroundColor: colors.white, borderRadius: 12, shadowColor: colors.black, elevation: 1, }}>
+          {produits.map((produit, i) => (
+            <View style={{ width: 160, minHeight: 200, alignItems: 'center', backgroundColor: colors.white, borderRadius: 12, shadowColor: colors.black, elevation: 1, }} key={i}>
               <Image style={{ width: '100%', height: 130, borderTopLeftRadius: 12, borderTopRightRadius: 12, }} source={produit.image} />
               <View style={{ width: '100%', backgroundColor: colors.white, borderRadius: 10, shadowColor: colors.black, elevation: 3, padding: 10 }}>
                 <Text style={{ color: colors.black, fontSize: 10 }}>{produit.categorie}</Text>

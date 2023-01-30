@@ -18,10 +18,9 @@ const Menu = () => {
 
     return (
         <View style={styles.menu}>
-            {menu.map((menu) => (
-                <Icon name={menu.name} size={30} color={color.color1} onPress={() => { navigation.navigate(menu.page) }}></Icon>
-            ))
-            }
+            {menu.map((menu, i) => (
+                <Icon name={menu.name} size={30} color={color.color1} onPress={() => { navigation.navigate(menu.page) }} key={i}></Icon>
+            ))}
         </View >
     );
 }
