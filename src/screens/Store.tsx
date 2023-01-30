@@ -5,8 +5,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Menu from '../components/Menu';
 
 import color from '../assets/style/colors';
+import styles from '../assets/style/styles';
 
-const Store = () => {
+const Store = ({ navigation }) => {
   const [mystore, setMystore] = useState([
     { id: 1, title: 'Produit 1', image: 'grocery.png', price: 100, quantite: 2 },
     { id: 2, title: 'Produit 2', image: 'grocery.png', price: 200, quantite: 1 },
@@ -27,7 +28,7 @@ const Store = () => {
     <View style={{ flex: 1 }}>
       <View style={{ width: '100%', flex: 1, flexDirection: 'column', gap: 20, padding: 15, }}>
         <View>
-          <Text style={{ color: color.color1, fontWeight: 'bold', fontSize: 20, }}>Store</Text>
+          <Text style={{ color: color.color1, fontWeight: 'bold', fontSize: 25, }}>Store</Text>
         </View>
         <ScrollView>
           <View style={{ gap: 10, }}>
@@ -44,9 +45,13 @@ const Store = () => {
                 </View>
               </View>
             ))}
+            <View style={{ flex: 1, height: 2, backgroundColor: color.black, margin: 10 }}></View>
             <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between', }}>
               <Text style={{ color: color.black, fontSize: 18, fontWeight: 'bold' }}>Totale payement: </Text>
               <Text style={{ color: color.black, fontSize: 18, fontWeight: 'bold' }}>{totale} DH</Text>
+            </View>
+            <View style={{ width: '100%', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={styles.authHomeBtn}>Pay Now</Text>
             </View>
           </View>
         </ScrollView>
