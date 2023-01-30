@@ -13,6 +13,7 @@ const Categories = () => {
                 <Text style={{ height: 40, color: colors.black, backgroundColor: colors.white, padding: 10, borderRadius: 8 }}>All</Text>
                 <Text style={{ height: 40, color: colors.black, backgroundColor: colors.white, padding: 10, borderRadius: 8 }}>Fruits</Text>
                 <Text style={{ height: 40, color: colors.black, backgroundColor: colors.white, padding: 10, borderRadius: 8 }}>Vegetables</Text>
+                <Text style={{ height: 40, color: colors.black, backgroundColor: colors.white, padding: 10, borderRadius: 8 }}>Al-Qatani</Text>
             </View>
         </ScrollView>
     );
