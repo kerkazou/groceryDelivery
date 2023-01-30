@@ -12,12 +12,18 @@ import s from '../../styles';
 const Products = ({ navigation }) => {
 
   const produits = [
-    { id: 1, title: 'Apple', categorie: 'fruit', image: require('../assets/images/apple.jpg'), price: 200, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 2, title: 'Avoca', categorie: 'fruit', image: require('../assets/images/avoca.jpg'), price: 300, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 3, title: 'Banana', categorie: 'fruit', image: require('../assets/images/banana.jpg'), price: 100, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 4, title: 'Grapes', categorie: 'fruit', image: require('../assets/images/grapes.jpg'), price: 20, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 5, title: 'Strawberries', categorie: 'fruit', image: require('../assets/images/strawberries.jpg'), price: 3000, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    { id: 6, title: 'Watermelon', categorie: 'fruit', image: require('../assets/images/watermelon.jpg'), price: 100, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 1, title: 'Apple', categorie: 'Fruits', image: require('../assets/images/apple.jpg'), price: 20, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 2, title: 'Avoca', categorie: 'Fruits', image: require('../assets/images/avoca.jpg'), price: 30, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 3, title: 'Banana', categorie: 'Fruits', image: require('../assets/images/banana.jpg'), price: 10, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 4, title: 'Grapes', categorie: 'Fruits', image: require('../assets/images/grapes.jpg'), price: 20, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 5, title: 'Strawberries', categorie: 'Fruits', image: require('../assets/images/strawberries.jpg'), price: 8, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 6, title: 'Watermelon', categorie: 'Fruits', image: require('../assets/images/watermelon.jpg'), price: 10, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+
+    { id: 7, title: 'Potatoe', categorie: 'Vegetables', image: require('../assets/images/potatoe.jpg'), price: 10, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 8, title: 'Tomatoe', categorie: 'Vegetables', image: require('../assets/images/tomatoe.jpg'), price: 12, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 9, title: 'Pepper', categorie: 'Vegetables', image: require('../assets/images/pepper.jpg'), price: 8, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 10, title: 'Eggplant', categorie: 'Vegetables', image: require('../assets/images/eggplant.jpg'), price: 11, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
+    { id: 11, title: 'Onion', categorie: 'Vegetables', image: require('../assets/images/onion.jpg'), price: 13, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
   ]
 
   return (
@@ -27,8 +33,8 @@ const Products = ({ navigation }) => {
       <ScrollView>
         <View style={{ width: '100%', flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 15, padding: 20, }}>
           {produits.map((produit) => (
-            <View style={{ width: 160, minHeight: 200, alignItems: 'center', backgroundColor: colors.white, borderRadius: 12, shadowColor: colors.black, elevation: 1 }}>
-              <Image style={{ width: '100%', height: 130, }} source={produit.image} />
+            <View style={{ width: 160, minHeight: 200, alignItems: 'center', backgroundColor: colors.white, borderRadius: 12, shadowColor: colors.black, elevation: 1, }}>
+              <Image style={{ width: '100%', height: 130, borderTopLeftRadius: 12, borderTopRightRadius: 12, }} source={produit.image} />
               <View style={{ width: '100%', backgroundColor: colors.white, borderRadius: 10, shadowColor: colors.black, elevation: 3, padding: 10 }}>
                 <Text style={{ color: colors.black, fontSize: 10 }}>{produit.categorie}</Text>
                 <Text style={{ color: colors.black, fontSize: 20 }} onPress={() => navigation.navigate('Product', { produit })}>{produit.title}</Text>
