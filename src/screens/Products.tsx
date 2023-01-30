@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, ScrollView, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../assets/style/colors';
@@ -11,7 +11,7 @@ import s from '../../styles';
 
 const Products = ({ navigation }) => {
 
-  const produits = [
+  const [produits, setProduits] = useState([
     { id: 1, title: 'Apple', categorie: 'Fruits', image: require('../assets/images/apple.jpg'), price: 20, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 2, title: 'Avoca', categorie: 'Fruits', image: require('../assets/images/avoca.jpg'), price: 30, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 3, title: 'Banana', categorie: 'Fruits', image: require('../assets/images/banana.jpg'), price: 10, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
@@ -24,10 +24,10 @@ const Products = ({ navigation }) => {
     { id: 9, title: 'Pepper', categorie: 'Vegetables', image: require('../assets/images/pepper.jpg'), price: 8, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 10, title: 'Eggplant', categorie: 'Vegetables', image: require('../assets/images/eggplant.jpg'), price: 11, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 11, title: 'Onion', categorie: 'Vegetables', image: require('../assets/images/onion.jpg'), price: 13, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-    
+
     { id: 12, title: 'Lentils', categorie: 'Al-Qatani', image: require('../assets/images/lentils.jpg'), price: 40, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
     { id: 13, title: 'Chickpeas', categorie: 'Al-Qatani', image: require('../assets/images/chickpeas.jpg'), price: 48, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },
-  ]
+  ])
 
   return (
     <View style={{ flex: 1 }}>
