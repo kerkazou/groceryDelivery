@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, Alert } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../assets/style/colors';
 
@@ -37,6 +37,7 @@ const Products = ({ navigation }) => {
     (searsh === '') ? setProduits(data) : setProduits(research)
   }, [searsh]);
 
+
   return (
     <View style={{ flex: 1 }}>
       <SearchBar onChangeText={value => setSearsh(value)} />
@@ -44,17 +45,17 @@ const Products = ({ navigation }) => {
       <ScrollView>
         <View style={{ width: '100%', flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 15, padding: 20, }}>
           {produits.map((produit, i) => (
-            <View style={{ width: 160, minHeight: 200, alignItems: 'center', backgroundColor: colors.white, borderRadius: 12, shadowColor: colors.black, elevation: 1, }} key={i}>
+            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Product', { produit })} style={{ width: 160, minHeight: 200, alignItems: 'center', backgroundColor: colors.white, borderRadius: 12, shadowColor: colors.black, elevation: 1, }} key={i}>
               <Image style={{ width: '100%', height: 130, borderTopLeftRadius: 12, borderTopRightRadius: 12, }} source={produit.image} />
               <View style={{ width: '100%', backgroundColor: colors.white, borderRadius: 10, shadowColor: colors.black, elevation: 3, padding: 10 }}>
                 <Text style={{ color: colors.black, fontSize: 10 }}>{produit.categorie}</Text>
-                <Text style={{ color: colors.black, fontSize: 20 }} onPress={() => navigation.navigate('Product', { produit })}>{produit.title}</Text>
+                <Text style={{ color: colors.black, fontSize: 20 }}>{produit.title}</Text>
                 <View style={{ width: 140, flexDirection: 'row', justifyContent: 'space-between', }}>
                   <Text style={{ color: colors.black, fontSize: 15, fontWeight: 'bold' }}>{produit.price} DH</Text>
                   <Icon name="shopping-cart" size={20} color={colors.black} ></Icon>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
