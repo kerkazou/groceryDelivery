@@ -6,43 +6,17 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import color from './src/assets/style/colors';
 
-import Products from './src/screens/Products';
-import Store from './src/screens/Store';
-import Profile from './src/screens/Profile';
+import AuthRouter from './src/router/Auth.Router';
+import AppRouter from './src/router/App.Router';
 
-const Tab = createBottomTabNavigator();
+const Tab = createNativeStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-
-            if (route.name === 'Products') {
-              iconName = focused ? 'store' : 'store';
-            }
-            else if (route.name === 'Store') {
-              iconName = focused ? 'shopping-cart' : 'shopping-cart';
-            }
-            else if (route.name === 'Profile') {
-              iconName = focused ? 'user-cog' : 'user-cog';
-            }
-
-            return (
-              <Icon name={iconName} size={size} color={color} />
-            );
-          },
-          tabBarActiveTintColor: color.color1,
-          tabBarInactiveTintColor: color.black,
-          tabBarLabelStyle: { paddingBottom: 10, fontSize: 10 },
-          tabBarStyle: { padding: 10, height: 60 },
-        })}
-      >
-        <Tab.Screen options={{ headerShown: false }} name="Products" component={Products} />
-        <Tab.Screen options={{ headerShown: false }} name="Store" component={Store} />
-        <Tab.Screen options={{ headerShown: false }} name="Profile" component={Profile} />
+      <Tab.Navigator screenOptions={{ headerShown: false }}>
+        <Tab.Screen options={{ headerShown: false }} name="Auth" component={AuthRouter} />
+        <Tab.Screen options={{ headerShown: false }} name="App" component={AppRouter} />
       </Tab.Navigator>
     </NavigationContainer>
   );

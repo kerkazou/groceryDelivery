@@ -5,8 +5,10 @@ import styles from '../assets/style/styles';
 import colors from '../assets/style/colors';
 import Header from '../components/Hreader';
 import SocialMedia from '../components/SocialMedia';
+import { useNavigation } from '@react-navigation/native';
 
-const Login = ({ navigation }) => {
+const Login = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.auth}>
       <View><Header /></View>
@@ -15,7 +17,7 @@ const Login = ({ navigation }) => {
         <TextInput style={styles.input} placeholder="Email" placeholderTextColor={colors.gray} />
         <TextInput style={styles.input} placeholder="Password" placeholderTextColor={colors.gray} secureTextEntry={true} />
         <Text style={styles.authtextbody}>Forget Password ?</Text>
-        <Text style={styles.loginBtn} onPress={() => navigation.navigate('Products')}>Login</Text>
+        <Text style={styles.loginBtn} onPress={() => navigation.navigate('App')}>Login</Text>
         <Text style={styles.authtextbody}>
           I don't have account?
           <Text onPress={() => navigation.navigate('Register')} style={styles.footerbtn}> Register</Text>
