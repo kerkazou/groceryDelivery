@@ -38,7 +38,6 @@ const Product = ({ route, navigation }) => {
         <Text style={styles.loginBtn} onPress={() => navigation.navigate('Store')}>Add to store</Text>
         <Text style={{ color: 'red' }}>Notice: The price is for one kilogram</Text>
       </View>
-      <Menu />
     </View>
   );
 }

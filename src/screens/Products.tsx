@@ -59,7 +59,6 @@ const Products = ({ navigation }) => {
           ))}
         </View>
       </ScrollView>
-      <Menu />
     </View >
   );
 }

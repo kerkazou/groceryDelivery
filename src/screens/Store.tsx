@@ -56,7 +56,6 @@ const Store = ({ navigation }) => {
           </View>
         </ScrollView>
       </View>
-      <Menu />
     </View >
   );
 }
