@@ -13,6 +13,9 @@ const Store = ({ navigation }) => {
     { id: 4, title: 'Produit 4', image: 'grocery.png', price: 400, quantite: 1 },
   ])
 
+  const [state, setState] = useState(0);
+
+
   const [totale, setTotale] = useState(0)
   useEffect(() => {
     var e = 0;
@@ -20,7 +23,7 @@ const Store = ({ navigation }) => {
       e += (produit.price * produit.quantite)
       setTotale(e)
     });
-  }, [])
+  }, [state])
 
   return (
     <View style={{ flex: 1 }}>
@@ -39,7 +42,7 @@ const Store = ({ navigation }) => {
                   <Text style={{ color: color.black, fontSize: 15, }}>Price Total: {produit.price * produit.quantite} DH</Text>
                 </View>
                 <View style={{ position: 'absolute', top: 0, right: 0, padding: 8 }}>
-                  <Icon name='close' size={20} color={color.black} onPress={() => { mystore.splice(i, 1) }}></Icon>
+                  <Icon name='close' size={20} color={color.black} onPress={() => { mystore.splice(i, 1), setState(state + 1) }}></Icon>
                 </View>
               </View>
             ))}
