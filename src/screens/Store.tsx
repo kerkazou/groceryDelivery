@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import Menu from '../components/Menu';
-
 import color from '../assets/style/colors';
 import styles from '../assets/style/styles';
 

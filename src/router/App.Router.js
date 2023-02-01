@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import color from '../../styles';
 
 import Products from '../screens/Products';
+import ProductRouter from './Product.Router';
 import Store from '../screens/Store';
 import Profile from '../screens/Profile';
 
@@ -39,7 +40,7 @@ const AppRouter = () => {
                 tabBarStyle: { padding: 10, height: 60, },
             })}
         >
-            <AppTab.Screen options={{ headerShown: false }} name="Products" component={Products} />
+            <AppTab.Screen options={{ headerShown: false }} name="Products" component={ProductRouter} />
             <AppTab.Screen options={{ headerShown: false }} name="Store" component={Store} />
             <AppTab.Screen options={{ headerShown: false }} name="Profile" component={Profile} />
         </AppTab.Navigator>

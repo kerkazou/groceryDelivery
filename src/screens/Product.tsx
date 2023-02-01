@@ -4,8 +4,6 @@ import { View, Image, Text } from 'react-native';
 import color from '../../styles';
 import styles from '../assets/style/styles';
 
-import Menu from '../components/Menu';
-
 const Product = ({ route, navigation }) => {
   const [produit, setProduit] = useState(route.params.produit)
 

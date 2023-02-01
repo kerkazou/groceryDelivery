@@ -5,7 +5,6 @@ import colors from '../assets/style/colors';
 
 import styles from '../assets/style/styles';
 import SearchBar from '../components/SearchBar';
-import Menu from '../components/Menu';
 import Categories from '../components/Categories';
 
 const Products = ({ navigation }) => {
