@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity, } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, Alert, } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../assets/style/colors';
 
@@ -28,19 +28,29 @@ const Products = ({ navigation }) => {
   ]
 
   const [produits, setProduits] = useState(data);
-  let [searsh, setSearsh] = useState("");
-  let [categorie, setCategorie] = useState("");
+  let [searsh, setSearsh] = useState({ title: '', categorie: '' });
 
   useEffect(() => {
-    const research = data.filter((e) => e.title.toLowerCase().includes(searsh.toLowerCase()));
-    (searsh === '') ? setProduits(data) : setProduits(research)
+    const research = data.filter((e) => e.categorie.toLowerCase().includes(searsh.categorie.toLowerCase()) && e.title.toLowerCase().includes(searsh.title.toLowerCase()));
+    (searsh.title === '' && searsh.categorie === '') ? setProduits(data) : setProduits(research)
   }, [searsh]);
 
 
   return (
     <View style={{ flex: 1 }}>
-      <SearchBar onChangeText={value => setSearsh(value)} />
-      <Categories />
+      <SearchBar onChangeText={value => setSearsh({ ...searsh, title: value })} />
+      <Categories
+        select={searsh.categorie}
+        onPress={(event) => setSearsh({
+          ...searsh,
+          categorie: (
+            event._dispatchInstances.memoizedProps.children !== 'All'
+              ? event._dispatchInstances.memoizedProps.children
+              : ''
+          )
+        })
+        }
+      />
       <ScrollView>
         <View style={{ width: '100%', flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 15, padding: 20, }}>
           {produits.map((produit, i) => (
