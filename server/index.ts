@@ -1,14 +1,10 @@
-const express = require('express')
-const cors = require('core-js')
+import express from 'express'
 const app = express()
-// import dotenv from 'dotenv'
-// dotenv.config();
+require('dotenv').config();
 
 // Connection to database
-// require('./config/db');
-// require('./models')
+require('./config/index');
 
-// app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
