@@ -16,9 +16,9 @@ export class Auth {
                     if (!verify_password) res.json({ error: 'Email or password is inccorect' })
                     else {
                         const SECRET_TOKEN: any = process.env.SECRET_TOKEN
-                        const token = await jwt.sign({ _id: find_user._id }, SECRET_TOKEN)
+                        const token = await jwt.sign({ _id: find_user._id }, SECRET_TOKEN, { expiresIn: "24h" })
                         res.header({ token })
-                        res.json({ token })
+                        res.json({ token, email, username: find_user.username })
                     }
                 }
             }
@@ -31,7 +31,7 @@ export class Auth {
         try {
             const { username, email, password, confirm_password } = req.body;
             if (username == '' || email == '' || password == '') res.json({ error: 'Fill the all fields to register' })
-            if (password != confirm_password) res.json({ error: 'Confirm your password' })
+            if (password != confirm_password) res.json({ error: 'Passwords does not match' })
             const find_user = await User.findOne({ email })
             if (find_user) res.json({ error: 'User existed' })
             else {
@@ -41,11 +41,11 @@ export class Auth {
                     email,
                     password: hash
                 })
-                if (!create_user) res.json({ error: 'Error, Try again' })
-                res.json({ message: 'Succes' })
+                if (!create_user) res.json({ error: 'Error creating user' })
+                res.json({ message: 'User Created Successfully' })
             }
         } catch (error) {
-            res.status(500).json({ error: error });
+            res.status(500).json({ error: 'Error creating user' });
         }
     }
 
