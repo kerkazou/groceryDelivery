@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response } from 'express'
 
 const notFoundRoutes = (req: Request, res: Response) => {
     res.status(404).send('Page note found')

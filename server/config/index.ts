@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 require('dotenv').config();
 
 // MongoDB
-const data_base = process.env.DATABASE_URL || 'mongodb://localhost:27017/groceryDelivery'
+const data_base: any = process.env.DATABASE_URL
 
 mongoose.connect(data_base, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
