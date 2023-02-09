@@ -20,11 +20,11 @@ const Login = () => {
         <Input placeholder="Email" type='email' />
         <Input placeholder="Password" type='password' />
         <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'flex-end' }}>
-          <Text style={{ fontSize: 16, color: colors.black, textDecorationLine: 'underline', }}>Forget Password ?</Text>
+          <Text style={{ fontSize: 18, color: colors.black, textDecorationLine: 'underline', }} onPress={() => navigation.navigate('ForgetPassword')}>Forget Password ?</Text>
         </View>
         <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-          <Text style={{ fontSize: 16, fontWeight: 'bold', color: colors.black, textDecorationLine: 'underline', }} onPress={() => navigation.navigate('Register')}>Register</Text>
-          <Text style={{ fontSize: 18, fontWeight: 'bold', color: colors.color1, backgroundColor: colors.black, paddingHorizontal: 10, paddingVertical: 5, borderRadius: 8 }} onPress={() => navigation.navigate('App')}>Login</Text>
+          <Text style={{ fontSize: 18, fontWeight: 'bold', color: colors.black, textDecorationLine: 'underline', }} onPress={() => navigation.navigate('Register')}>Register</Text>
+          <Text style={{ width: 100, fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: colors.color1, backgroundColor: colors.black, paddingVertical: 8, borderRadius: 8 }} onPress={() => navigation.navigate('App')}>Login</Text>
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, }}>
           <Text style={{ width: '45%', height: 3, backgroundColor: colors.black }}></Text>

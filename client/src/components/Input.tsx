@@ -1,26 +1,26 @@
 import React from 'react';
 import { View, TextInput } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from '../assets/style/styles';
 import colors from '../assets/style/colors';
 
-const Input = (props) => {
+const Input = (props: any) => {
     const icons = [
-        { name: 'username', icon: 'user' },
+        { name: 'username', icon: 'account' },
         { name: 'email', icon: 'email' },
-        { name: 'password', icon: 'password' },
+        { name: 'password', icon: 'lock' },
     ]
 
     return (
-        <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingLeft: 10, paddingRight: 15, borderBottomColor: colors.black, borderBottomWidth: 8, }}>
+        <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingLeft: 5, paddingRight: 10, borderBottomColor: colors.black, borderBottomWidth: 8, }}>
             <TextInput
                 placeholder={props.placeholder}
                 placeholderTextColor={colors.black}
                 secureTextEntry={(props.type === 'password') ? true : false}
-                style={{ width: '100%', height: 50, fontSize: 18, }}
+                style={{ height: 50, fontSize: 18, }}
             />
-            <Icon name="user" size={20} color={colors.black} ></Icon>
+            <Icon name={(props.type === 'username') ? 'account' : 'email'} size={25} color={colors.black} ></Icon>
         </View>
     );
 }
