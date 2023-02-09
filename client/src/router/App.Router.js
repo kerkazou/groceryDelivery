@@ -1,13 +1,9 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import color from '../../styles';
 
-import Products from '../screens/Products';
+import colors from '../assets/style/colors';
+
 import ProductRouter from './Product.Router';
 import Store from '../screens/Store';
 import Profile from '../screens/Profile';
@@ -33,8 +29,8 @@ const AppRouter = () => {
 
                     return <Icon name={iconName} size={size} color={color} />
                 },
-                tabBarActiveTintColor: color.color1,
-                tabBarInactiveTintColor: color.black,
+                tabBarActiveTintColor: colors.color1,
+                tabBarInactiveTintColor: colors.black,
                 tabBarShowLabel: true,
                 tabBarLabelStyle: { paddingBottom: 10, },
                 tabBarStyle: { padding: 10, height: 60, },

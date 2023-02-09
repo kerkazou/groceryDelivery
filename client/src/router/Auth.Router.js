@@ -1,15 +1,9 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Page from '../screens/Page';
 import Login from '../screens/Login';
 import Register from '../screens/Register';
-
-import AppRouter from './App.Router';
 
 const AuthStack = createNativeStackNavigator();
 

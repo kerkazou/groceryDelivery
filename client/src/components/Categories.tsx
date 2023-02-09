@@ -4,7 +4,7 @@ import { View, Text, ScrollView, } from 'react-native';
 import styles from '../assets/style/styles';
 import colors from '../assets/style/colors';
 
-const Categories = (props) => {
+const Categories = (props: any) => {
     const [categories, setCategories] = useState([
         { id: 1, name: '' },
         { id: 1, name: 'Fruits' },

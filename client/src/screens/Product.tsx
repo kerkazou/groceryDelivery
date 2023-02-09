@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { View, Image, Text } from 'react-native';
 
-import color from '../../styles';
+import colors from '../assets/style/colors';
 import styles from '../assets/style/styles';
 
 const Product = ({ route, navigation }) => {
@@ -13,25 +13,25 @@ const Product = ({ route, navigation }) => {
         <Image style={{ width: '100%', height: 350 }} source={produit.image} />
         <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, }}>
           <View>
-            <Text style={{ color: color.black, fontSize: 12, }}>{produit.categorie}</Text>
-            <Text style={{ color: color.black, fontSize: 30, }}>{produit.title}</Text>
-            <Text style={{ color: color.black, fontSize: 18, fontWeight: 'bold', }}>{produit.price} DH</Text>
+            <Text style={{ color: colors.black, fontSize: 12, }}>{produit.categorie}</Text>
+            <Text style={{ color: colors.black, fontSize: 30, }}>{produit.title}</Text>
+            <Text style={{ color: colors.black, fontSize: 18, fontWeight: 'bold', }}>{produit.price} DH</Text>
           </View>
           <View style={{ flexDirection: 'row', gap: 2, }}>
-            <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: color.color1, borderBottomLeftRadius: 8, borderTopLeftRadius: 8, }}>
-              <Text style={{ color: color.black, fontSize: 20, }} onPress={() => { setProduit({ ...produit, quantite: produit.quantite - 1 }) }}>-</Text>
+            <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.color1, borderBottomLeftRadius: 8, borderTopLeftRadius: 8, }}>
+              <Text style={{ color: colors.black, fontSize: 20, }} onPress={() => { setProduit({ ...produit, quantite: produit.quantite - 1 }) }}>-</Text>
             </View>
-            <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: color.color1, }}>
-              <Text style={{ color: color.black, fontSize: 20, }}>{produit.quantite}</Text>
+            <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.color1, }}>
+              <Text style={{ color: colors.black, fontSize: 20, }}>{produit.quantite}</Text>
             </View>
-            <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: color.color1, borderTopRightRadius: 8, borderBottomRightRadius: 8, }}>
-              <Text style={{ color: color.black, fontSize: 20, }} onPress={() => { setProduit({ ...produit, quantite: produit.quantite + 1 }) }}>+</Text>
+            <View style={{ width: 30, height: 30, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: colors.color1, borderTopRightRadius: 8, borderBottomRightRadius: 8, }}>
+              <Text style={{ color: colors.black, fontSize: 20, }} onPress={() => { setProduit({ ...produit, quantite: produit.quantite + 1 }) }}>+</Text>
             </View>
           </View>
         </View>
-        <Text style={{ color: color.black, paddingHorizontal: 20, }}>{produit.discruption}</Text>
+        <Text style={{ color: colors.black, paddingHorizontal: 20, }}>{produit.discruption}</Text>
         <View style={{ width: '100%', flexDirection: 'row', paddingHorizontal: 20, }}>
-          <Text style={{ color: color.black, fontSize: 20, }}>Total: {produit.price * produit.quantite} DH</Text>
+          <Text style={{ color: colors.black, fontSize: 20, }}>Total: {produit.price * produit.quantite} DH</Text>
         </View>
         <Text style={styles.loginBtn} onPress={() => navigation.navigate('Store')}>Add to store</Text>
         <Text style={{ color: 'red' }}>Notice: The price is for one kilogram</Text>

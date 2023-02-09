@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity, Alert, } from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity, } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
+
 import colors from '../assets/style/colors';
 
-import styles from '../assets/style/styles';
 import SearchBar from '../components/SearchBar';
 import Categories from '../components/Categories';
 
-const Products = ({ navigation }) => {
+
+const Products = () => {
+  const navigation = useNavigation();
 
   const data = [
     { id: 1, title: 'Apple', categorie: 'Fruits', image: require('../assets/images/apple.jpg'), price: 20, quantite: 1, discruption: 'Lorem ipsum dolor sit amet consectetur adipisicing elit' },

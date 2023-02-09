@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from '../assets/style/styles';
 import colors from '../assets/style/colors';
 
-const SearchBar = (props) => {
+const SearchBar = (props: any) => {
 
     return (
         <View style={styles.searchBar}>

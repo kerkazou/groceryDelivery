@@ -5,7 +5,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import color from '../assets/style/colors';
 import styles from '../assets/style/styles';
 
-const Store = ({ navigation }) => {
+import { useNavigation } from '@react-navigation/native';
+
+const Store = () => {
+  const navigation = useNavigation();
+
   const [mystore, setMystore] = useState([
     { id: 1, title: 'Produit 1', image: 'grocery.png', price: 100, quantite: 2 },
     { id: 2, title: 'Produit 2', image: 'grocery.png', price: 200, quantite: 1 },

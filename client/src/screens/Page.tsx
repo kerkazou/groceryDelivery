@@ -1,10 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import styles from '../assets/style/styles';
 import Header from '../components/Hreader';
 
-const Page = ({ navigation }) => {
+
+const Page = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.auth}>
       <View><Header /></View>
