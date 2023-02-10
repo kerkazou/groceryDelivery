@@ -3,11 +3,15 @@ import { View, Text, Image, ScrollView, } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
 
+import { useDispatch } from 'react-redux';
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from '../redux/features/index';
+
 import colors from '../assets/style/colors';
 
 
 const Profile = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch()
 
   return (
     <View style={{ flex: 1, padding: 20, }}>
@@ -56,7 +60,7 @@ const Profile = () => {
           </View>
           <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderBottomColor: colors.color1, borderBottomWidth: 3, padding: 5 }}>
             <Text style={{ color: colors.black, fontSize: 18, fontWeight: 'bold', }}>Logout</Text>
-            <Text style={{ backgroundColor: colors.black, color: colors.color1, borderRadius: 10, fontWeight: 'bold', paddingHorizontal: 25, paddingVertical: 8 }} onPress={() => navigation.navigate('Page')}><Icon name='sign-out-alt' size={20} /></Text>
+            <Text style={{ backgroundColor: colors.black, color: colors.color1, borderRadius: 10, fontWeight: 'bold', paddingHorizontal: 25, paddingVertical: 8 }} onPress={() => {dispatch(LOGOUT()), navigation.navigate('Page')}}><Icon name='sign-out-alt' size={20} /></Text>
           </View>
         </View>
       </ScrollView>

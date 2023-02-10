@@ -2,8 +2,9 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import colors from '../assets/style/colors';
+import { useSelector } from 'react-redux';
 
+import colors from '../assets/style/colors';
 import ProductRouter from './Product.Router';
 import Store from '../screens/Store';
 import Profile from '../screens/Profile';
@@ -11,6 +12,9 @@ import Profile from '../screens/Profile';
 const AppTab = createBottomTabNavigator();
 
 const AppRouter = () => {
+    const Auth = useSelector((state) => state.Auth)
+    console.log(Auth)
+
     return (
         <AppTab.Navigator
             screenOptions={({ route }) => ({

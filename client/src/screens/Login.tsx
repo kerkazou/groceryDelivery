@@ -2,6 +2,9 @@ import React from 'react';
 import { Text, View, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import { useDispatch } from 'react-redux';
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from '../redux/features/index';
+
 import styles from '../assets/style/styles';
 import colors from '../assets/style/colors';
 import Input from '../components/Input';
@@ -10,6 +13,7 @@ import SocialMedia from '../components/SocialMedia';
 
 const Login = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch()
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.color1, flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -24,7 +28,7 @@ const Login = () => {
         </View>
         <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
           <Text style={{ fontSize: 18, fontWeight: 'bold', color: colors.black, textDecorationLine: 'underline', }} onPress={() => navigation.navigate('Register')}>Register</Text>
-          <Text style={{ width: 100, fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: colors.color1, backgroundColor: colors.black, paddingVertical: 8, borderRadius: 8 }} onPress={() => navigation.navigate('App')}>Login</Text>
+          <Text style={{ width: 100, fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: colors.color1, backgroundColor: colors.black, paddingVertical: 8, borderRadius: 8 }} onPress={() => { dispatch(LOGIN_SUCCESS()), navigation.navigate('App') }}>Login</Text>
         </View>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, }}>
           <Text style={{ width: '45%', height: 3, backgroundColor: colors.black }}></Text>
